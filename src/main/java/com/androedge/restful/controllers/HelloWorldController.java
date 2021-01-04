@@ -21,6 +21,7 @@ public class HelloWorldController {
     @GetMapping("/hello-world/path-variable/{name}")
     public HelloWorldDto helloWorldPathVariable(@PathVariable String name) {
         // changes!!!!
+        // just test
         return new HelloWorldDto(String.format("Hello World, %s", name));
     }
 
