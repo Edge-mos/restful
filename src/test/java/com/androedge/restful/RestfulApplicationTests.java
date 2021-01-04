@@ -1,4 +1,4 @@
-package com.androede.restful;
+package com.androedge.restful;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
