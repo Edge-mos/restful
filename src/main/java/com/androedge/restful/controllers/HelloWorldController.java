@@ -22,7 +22,6 @@ public class HelloWorldController {
     public HelloWorldDto helloWorldPathVariable(@PathVariable String name) {
         // changes!!!!
         // just test
-        //amend
         return new HelloWorldDto(String.format("Hello World, %s", name));
     }
 
