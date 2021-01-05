@@ -23,7 +23,7 @@ public class HelloWorldController {
         return new HelloWorldDto(String.format("Hello World, %s", name));
     }
 
-    @GetMapping("hello-world-fixed")
+    @GetMapping("/hello-world-fixed")
     public String masterFix() {
         return "in master fixed";
     }
