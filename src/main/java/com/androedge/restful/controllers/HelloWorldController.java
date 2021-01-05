@@ -23,6 +23,11 @@ public class HelloWorldController {
         return new HelloWorldDto(String.format("Hello World, %s", name));
     }
 
+    @GetMapping("/feature-two")
+    public String featureTwo() {
+        return "feature 2 test";
+    }
+
 
 
 
