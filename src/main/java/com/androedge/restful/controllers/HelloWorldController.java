@@ -25,6 +25,7 @@ public class HelloWorldController {
 
     @GetMapping("/feature-two")
     public String featureTwo() {
+        // test message
         return "feature 2 test";
     }
 
