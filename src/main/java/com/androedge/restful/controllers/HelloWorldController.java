@@ -34,4 +34,9 @@ public class HelloWorldController {
         // test message
         return "feature 2 test";
     }
+
+    @GetMapping("/feature-two")
+    public String featureThree() {
+        return "feature 3 test with branch 3";
+    }
 }
