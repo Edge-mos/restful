@@ -3,8 +3,11 @@ package com.androedge.restful.controllers;
 import com.androedge.restful.models.User;
 import com.androedge.restful.services.UserDaoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -28,8 +31,13 @@ public class UserResource {
     }
 
     @PostMapping("/users")
-    public void createUser(@RequestBody User user) {
-        final User save = this.service.save(user);
+    public ResponseEntity<Object> createUser(@RequestBody User user) {
+        final User savedUser = this.service.save(user);
+        final URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(savedUser.getId()).toUri();
 
+        return ResponseEntity.created(location).build();
     }
 }
