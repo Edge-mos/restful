@@ -1,5 +1,6 @@
 package com.androedge.restful.controllers;
 
+import com.androedge.restful.exceptions.UserNotFoundException;
 import com.androedge.restful.models.User;
 import com.androedge.restful.services.UserDaoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,10 @@ public class UserResource {
                 .buildAndExpand(savedUser.getId()).toUri();
 
         return ResponseEntity.created(location).build();
+    }
+
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable int id) {
+       this.service.deleteById(id);
     }
 }
