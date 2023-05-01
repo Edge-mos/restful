@@ -23,4 +23,9 @@ public class HelloWorldController {
         return new HelloWorldDto(String.format("Hello World, %s", name));
     }
 
+    @GetMapping("/git-test")
+    public String getMessageForGitTest() {
+        return "just new message for git testing";
+    }
+
 }
